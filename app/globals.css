@@ -1,26 +1,199 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
-}
+} */
 
-@theme inline {
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+html{
+  direction: rtl;
 }
-
-body {
+/* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+/* @layer base {
+  body {
+    @apply font-sans text-gray-900 leading-relaxed antialiased;
+  }
+
+  p ,span{
+    @apply text-base leading-7 text-gray-700;
+  }
+  
+  h1 {
+    @apply text-3xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  h3 {
+    @apply text-lg font-semibold tracking-tight;
+  }
+
+  a {
+    @apply text-blue-600 hover:underline;
+  }
+} */
+
+/* 1. Design Tokens */
+@theme{
+
+
+  /* Text color*/
+
+
+  --color-black:#000000;
+  --color-text-heading1:#383838;
+  --color-gray-6:#BFBFBF;
+  --color-gray-7:#8C8C8C;
+  --color-gray-8:#595959;
+  --color-gray-800:#6D6E71;
+  --color-blue-600:#1677FF;
+
+
+  --color-orange-600:#949699;
+
+  --color-green-600:#1AC475;
+  --color-green-700:#0D9E5A;
+
+  --color-orange-700:#FF8037;
+  --color-orange-800:#DD6824;
+
+--color-gray-500:#D9D9D9;
+
+--color-line:#0000001a;
+  /* icon */
+
+  /* surface */
+  --color-surface-backdrop:var(--color-black);
+  --color-surface-inverse:var(--color-gray-1300);
+  --color-surface-info:var(--color-blue-600);
+
+  /* text */
+  --color-text-primary:var(--color-gray-1200);
+  --color-text-info:var(--color-blue-600);
+
+  --color-secondary-text:var(--color-orange-600);
+  --color-text-onsuccesslight-secondary:var(--color-green-700);
+  --color--neutral-gray-7:var(--color-gray-7);
+
+
+
+  /* icon */
+  --color-icon-info:var(--color-blue-600);
+  --color-icon-success:var(--color-green-600);
+  --color-icon-selected-secondary:var(--color-orange-800);
+
+  
+   --color-neutral-gray-8:var(--color-gray-8);
+   --color-secondary-text:var(--color-orange-700);
+
+
+
+   /* border */
+   --color-border-neutral:var(--color-gray--500);
+    --color-neutral-gray-6:var(--color-gray-6);
+
+
+
+
+
+
+   
+    --text-2xs:10px;
+      --text-base:16px;
+      --text-2xs--line-height:16px;
+
+      
+      
+
+    --font-wight-bold:700;
+    --font-weight-medium:500;
+    --font-weight-regular:400;
+
+
+
+    --shadow-xl:0px 10px 8px 0px rgba(0, 0, 0, 0.16);
+    --shadow-2xl :0px 8px 16px 0px rgba(27, 27, 27, 0.16);
+    
+    --radius-3:12px;
+    --radius-4:16px;
+}
+
+
+
+/* font-family: IRANSansFaNum;
+font-weight: 700;
+font-style: Bold;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 16px;
+letter-spacing: 0%;
+text-align: right;
+     */
+
+/* fony size */
+
+/* 
+500
+
+Style
+Medium
+
+Size
+16px */
+
+
+
+
+/* 2. Base Styles */
+@layer base {
+  body {
+    @apply  text-gray-900 leading-relaxed antialiased;
+    background: url("/image/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  main{
+    @apply  w-[97%] h-[864px] m-auto mt-7  rounded-4 bg-white shadow-2xl;
+    backdrop-filter: blur(50px);
+  }
+h1{
+  @apply  text-text-heading1  font-bold text-base
+}
+h2{
+  @apply  text-text-primary font-medium text-base
+}
+
+}
+
+/* 3. Components */
+@layer components {
+
+
+.header{
+  @apply flex justify-between items-center w-[100%] h-[82px] m-auto  shadow-xl bg-white ;
+  backdrop-filter: blur(20px);
+  }
+}
+/* 4. Utilities */
+@layer utilities {
+
 }

@@ -4,6 +4,8 @@ import { Profile } from "./Profile";
 export const Header = () => {
   return (
     <>
+    <header className="header ">
+      <div className="flex items-center pr-5">
       <span>
         <Image
           src="/image/MainLogo.png"
@@ -13,8 +15,12 @@ export const Header = () => {
           loading="lazy"
         />
       </span>
-      <h3>سامانه ضدپولشویی</h3>
-      <Profile />
+   
+      <h1 className="pr-3">سامانه ضدپولشویی</h1>
+      </div>
+      <div><Profile /></div>
+      
+      </header>
     </>
   );
 };
