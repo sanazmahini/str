@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
 import { iransans } from "./fonts";
-// import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Header } from "./component/templates/Header";
-import {Footer} from "./component/templates/Footer"
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import { Header } from "./components/templates/Header";
+import { Footer } from "./components/templates/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,15 +15,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={iransans.className} 
-    >
-     <Header/>
-      <body className={iransans.className} rounded-t-3 >
+    <html lang="en" className={iransans.className}>
+      <body className={iransans.className}>
+        <Header />
         <main className={iransans.className}>{children}</main>
+        <Footer />
       </body>
-      <Footer />
     </html>
   );
 }
